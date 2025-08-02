@@ -15,9 +15,9 @@ cd DesafioPractico01DWF
    
 Run the project in inteliji IDEA or type  mvn spring-boot:run in terminal
 
-then in your browser go to http://localhost:8080/ to display index.html page what has al the factures and go to http://localhost:8080/api/books if you whant to see the api and the data what is stored in ./data directory</h5>
+then in your browser go to http://localhost:8080/ for display index.html page what has all the factures and go to http://localhost:8080/api/books if you whant to see the api and the data what is stored in ./data directory</h5>
 
-<h3>To see want to see the database</h3>
+<h3>If you want to see the database</h3>
 <h5>Go to search bar and type http://localhost:8080/h2-console
 the credentials, driver, datasource and password are:
 url=jdbc:h2:./data:bookdb
