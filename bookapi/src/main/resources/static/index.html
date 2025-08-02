@@ -99,20 +99,61 @@
   </style>
 </head>
 <body>
+<h1><i class="fas fa-laptop-code">Search Your Book!</i></h1>
+<form id="searchForm">
+  <input type="text" id="searchTitle" placeholder="Search By title" required>
+  <button type="submit"><i class="fas fa-search"></i> Search</button>
+</form>
 <h1><i class="fas fa-laptop-code"></i> Desarrollo de Aplicaciones con Web Frameworks</h1>
 
 <form id="bookForm">
-  <input type="text" id="title" placeholder="Título del libro" required>
-  <input type="text" id="author" placeholder="Autor" required>
-  <input type="number" id="year" placeholder="Año de publicación" required>
-  <button type="submit"><i class="fas fa-plus-circle"></i> Agregar</button>
+  <input type="text" id="title" placeholder="Title of the book" required>
+  <input type="text" id="author" placeholder="By" required>
+  <input type="number" id="year" placeholder="Release Year" required>
+  <button type="submit"><i class="fas fa-plus-circle"></i>Add</button>
 </form>
-
+<h2>book catalog</h2>
+<ul id="bookList"></ul>
 <footer>
-  <p><i class="fas fa-user-edit"></i> <strong>Autores:</strong> Ever Gabriel Cabezas Alfaro y Luis Enrique Cartagena Arteaga</p>
+  <p><i class="fas fa-user-edit"></i> <strong>By</strong> Ever Gabriel Cabezas Alfaro y Luis Enrique Cartagena Arteaga</p>
 </footer>
 
 <script>
+  document.getElementById('searchForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const title = document.getElementById('searchTitle').value;
+
+    fetch(`http://localhost:8080/api/books/search?title=${encodeURIComponent(title)}`)
+            .then(response => response.json())
+            .then(data => {
+              bookList.innerHTML = '';
+              if (data.length === 0) {
+                bookList.innerHTML = '<li>No books found.</li>';
+              } else {
+                data.forEach(book => {
+                  const li = document.createElement('li');
+                  li.textContent = `${book.title} — ${book.author}`;
+                  bookList.appendChild(li);
+                });
+              }
+            });
+  });
+
+  const bookForm = document.getElementById('bookForm');
+  const bookList = document.getElementById('bookList');
+  function loadBooks() {
+    fetch('http://localhost:8080/api/books')
+            .then(response => response.json())
+            .then(data => {
+              bookList.innerHTML = '';
+              data.forEach(book => {
+                const li = document.createElement('li');
+                li.textContent = `${book.title} — ${book.author} - ${book.publicationYear}`;
+                bookList.appendChild(li);
+              });
+            });
+  }
+
   document.getElementById('bookForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -136,8 +177,10 @@
               } else {
                 alert('Ocurrió un error al agregar el libro.');
               }
+              window.location.reload();
             });
   });
+  window.onload = loadBooks;
 </script>
 </body>
 </html>
