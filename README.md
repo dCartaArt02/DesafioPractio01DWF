@@ -29,7 +29,7 @@ driverClassName=org.h2.Driver
 .username=sa
 password=(leave empty)
 
-<h1></h1>
+<h1>Authors</h1>
     Ever Gabriel Cabezas Alfaro
     Luis Enrique Cartagena Arteaga
 
