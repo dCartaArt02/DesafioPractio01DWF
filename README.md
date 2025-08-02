@@ -1,10 +1,5 @@
 # DesafioPractio01DWF
-  _________            .__              __________               __   
- /   _____/____________|__| ____    ____\______   \ ____   _____/  |_ 
- \_____  \\____ \_  __ \  |/    \  / ___\|    |  _//  _ \ /  _ \   __\
- /        \  |_> >  | \/  |   |  \/ /_/  >    |   (  <_> |  <_> )  |  
-/_______  /   __/|__|  |__|___|  /\___  /|______  /\____/ \____/|__|  
-        \/|__|                 \//_____/        \/                    
+<img width="2879" height="1848" alt="ascii-art" src="https://github.com/user-attachments/assets/c758347e-0fc0-45b5-89a3-13eda359c6d0" />
 
 This is a small project about a bookstore in API REST on SpringBoot Java framework what has search facture add facture on data base h2 what save tables of h2 and can display database information in index.html
 
@@ -30,6 +25,7 @@ driverClassName=org.h2.Driver
 password=(leave empty)
 
 <h1>Authors</h1>
-    Ever Gabriel Cabezas Alfaro
+    Ever Gabriel Cabezas Alfaro,
+    <br>
     Luis Enrique Cartagena Arteaga
 
