@@ -1,5 +1,6 @@
 # DesafioPractio01DWF
-<img width="2879" height="1848" alt="ascii-art" src="https://github.com/user-attachments/assets/c758347e-0fc0-45b5-89a3-13eda359c6d0" />
+
+<img width="900" height="900" alt="reimu0000 " src="https://github.com/user-attachments/assets/dece9d11-8dc9-4bf2-b183-ee23206bd825" />
 
 This is a small project about a bookstore in API REST on SpringBoot Java framework what has search facture add facture on data base h2 what save tables of h2 and can display database information in index.html
 
